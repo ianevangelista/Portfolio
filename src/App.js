@@ -5,8 +5,12 @@ import Home from "./Pages/Home";
 
 export default () => {
   return (
-    <HashRouter basename="/">
-      <Route exact path="/" render={(props: any) => <Home {...props} />} />
+    <HashRouter basename={process.env.PUBLIC_URL + "/"}>
+      <Route
+        exact
+        path={process.env.PUBLIC_URL + "/"}
+        render={(props: any) => <Home {...props} />}
+      />
     </HashRouter>
   );
 };
