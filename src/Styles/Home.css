@@ -1,0 +1,23 @@
+.home-image {
+  background-image: url("https://cdn.pixabay.com/photo/2016/10/11/21/43/geometric-1732847_1280.jpg");
+  height: 125vh;
+  width: 100vw;
+}
+
+.card {
+  background-color: rgba(245, 245, 245, 0.4);
+}
+.card-header,
+.card-footer {
+  opacity: 1;
+}
+
+.text-h1,
+h1 {
+  font-size: 4vw;
+}
+
+.text-h4,
+h4 {
+  font-size: 2vw;
+}
