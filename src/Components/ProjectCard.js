@@ -81,7 +81,6 @@ export default function ProjectCard() {
                     </p>
                   </div>
                 </div>
-                <p className="text-muted text-center my-3 mx-3">Ingress</p>
               </div>
               <Button variant="primary" onClick={() => setModalShow(true)}>
                 Les mer om prosjektet her
