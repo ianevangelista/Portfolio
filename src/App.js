@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 
 export default () => {
   return (
-    <HashRouter>
+    <HashRouter basename="/">
       <Route exact path="/" render={(props: any) => <Home {...props} />} />
     </HashRouter>
   );
