@@ -1,27 +1,28 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.1f525403.chunk.css",
-    "main.js": "/Portfolio/static/js/main.0d6776d9.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.0d6776d9.chunk.js.map",
-    "runtime-main.js": "/Portfolio/static/js/runtime-main.4005ac6c.js",
-    "runtime-main.js.map": "/Portfolio/static/js/runtime-main.4005ac6c.js.map",
-    "static/js/2.76485f8f.chunk.js": "/Portfolio/static/js/2.76485f8f.chunk.js",
-    "static/js/2.76485f8f.chunk.js.map": "/Portfolio/static/js/2.76485f8f.chunk.js.map",
-    "index.html": "/Portfolio/index.html",
-    "precache-manifest.2c9bf4c80e7692632499cb2208c2619f.js": "/Portfolio/precache-manifest.2c9bf4c80e7692632499cb2208c2619f.js",
-    "service-worker.js": "/Portfolio/service-worker.js",
-    "static/css/main.1f525403.chunk.css.map": "/Portfolio/static/css/main.1f525403.chunk.css.map",
-    "static/js/2.76485f8f.chunk.js.LICENSE": "/Portfolio/static/js/2.76485f8f.chunk.js.LICENSE",
-    "static/media/cv.pdf": "/Portfolio/static/media/cv.67980e79.pdf",
-    "static/media/ian.jpg": "/Portfolio/static/media/ian.72920b94.jpg",
-    "static/media/icecream.jpg": "/Portfolio/static/media/icecream.d963c617.jpg",
-    "static/media/monte.jpg": "/Portfolio/static/media/monte.8c5ff644.jpg",
-    "static/media/quiz.png": "/Portfolio/static/media/quiz.075e486f.png"
+    "main.css": "ianevangelista.no/static/css/main.70c57f94.chunk.css",
+    "main.js": "ianevangelista.no/static/js/main.6952d885.chunk.js",
+    "main.js.map": "ianevangelista.no/static/js/main.6952d885.chunk.js.map",
+    "runtime-main.js": "ianevangelista.no/static/js/runtime-main.83f73a7c.js",
+    "runtime-main.js.map": "ianevangelista.no/static/js/runtime-main.83f73a7c.js.map",
+    "static/js/2.d03d21c2.chunk.js": "ianevangelista.no/static/js/2.d03d21c2.chunk.js",
+    "static/js/2.d03d21c2.chunk.js.map": "ianevangelista.no/static/js/2.d03d21c2.chunk.js.map",
+    "index.html": "ianevangelista.no/index.html",
+    "precache-manifest.1a37b5926795d5759b788bd21102c2ed.js": "ianevangelista.no/precache-manifest.1a37b5926795d5759b788bd21102c2ed.js",
+    "service-worker.js": "ianevangelista.no/service-worker.js",
+    "static/css/main.70c57f94.chunk.css.map": "ianevangelista.no/static/css/main.70c57f94.chunk.css.map",
+    "static/js/2.d03d21c2.chunk.js.LICENSE": "ianevangelista.no/static/js/2.d03d21c2.chunk.js.LICENSE",
+    "static/media/cv.pdf": "ianevangelista.no/static/media/cv.67980e79.pdf",
+    "static/media/ian.jpg": "ianevangelista.no/static/media/ian.72920b94.jpg",
+    "static/media/icecream.jpg": "ianevangelista.no/static/media/icecream.d963c617.jpg",
+    "static/media/monte.jpg": "ianevangelista.no/static/media/monte.8c5ff644.jpg",
+    "static/media/news.png": "ianevangelista.no/static/media/news.19c7b2a9.png",
+    "static/media/quiz.png": "ianevangelista.no/static/media/quiz.075e486f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.4005ac6c.js",
-    "static/js/2.76485f8f.chunk.js",
-    "static/css/main.1f525403.chunk.css",
-    "static/js/main.0d6776d9.chunk.js"
+    "static/js/runtime-main.83f73a7c.js",
+    "static/js/2.d03d21c2.chunk.js",
+    "static/css/main.70c57f94.chunk.css",
+    "static/js/main.6952d885.chunk.js"
   ]
 }
