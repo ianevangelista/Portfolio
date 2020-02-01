@@ -7,7 +7,7 @@ import cv from "../Local_files/cv.pdf";
 export default function Navigationbar() {
   return (
     <nav
-      className="navbar py-0 navbar-expand-lg navbar-dark sticky-top navigationbar-image"
+      className="navbar py-0 navbar-expand-xl navbar-dark sticky-top navigationbar-image"
       role="navigation"
     >
       <li className="navbar-brand">

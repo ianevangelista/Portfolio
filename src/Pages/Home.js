@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         <div className="row">
           <div class="col-8 mx-auto text-center">
-            <div class="card">
+            <div class="card m-5">
               <div class="card-header">
                 <h1 className="text-h1 my-auto">2.KLASSE DATAINGENIØR</h1>
               </div>
@@ -37,7 +37,7 @@ export default function Home() {
                   href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
                   rel="stylesheet"
                 ></link>
-                <row>
+                <div className="row justify-content-center align-items-center">
                   <button className="btn-lg bg-primary button rounded-lg fab fa-linkedin m-3 border-0">
                     <a
                       href="https://www.linkedin.com/in/ianevangelista/"
@@ -47,7 +47,7 @@ export default function Home() {
                       <p className="text-dark my-1">LinkedIn</p>
                     </a>
                   </button>
-                  <button className="btn-lg bg-primary rounded-lg fab fa-github mr-3 border-0">
+                  <button className="btn-lg bg-primary rounded-lg fab fa-github m-3 border-0">
                     <a
                       href="https://github.com/ianevangelista"
                       target="_blank"
@@ -56,7 +56,7 @@ export default function Home() {
                       <p className="text-dark my-1">GitHub</p>
                     </a>
                   </button>
-                  <button className="btn-lg bg-primary rounded-lg fab fa-gitlab mr-3 border-0">
+                  <button className="btn-lg bg-primary rounded-lg fab fa-gitlab m-3 border-0">
                     <a
                       href="https://gitlab.com/ianeva"
                       target="_blank"
@@ -65,7 +65,7 @@ export default function Home() {
                       <p className="text-dark my-1">GitLab</p>
                     </a>
                   </button>
-                </row>
+                </div>
               </div>
             </div>
           </div>

@@ -67,7 +67,7 @@ export default function ProjectCard() {
           <ButtonToolbar>
             <Card cardSize="">
               <div className="col-sm-">
-                <div className={"mx-auto bg- border-0"}>
+                <div className="mx-auto bg- border-0">
                   <div className="container-img">
                     <img
                       src={p.img}

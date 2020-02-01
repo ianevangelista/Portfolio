@@ -8,7 +8,7 @@
 .navbar-brand .nav-link {
   color: #ffffff;
   font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold";
-  font-size: 30px;
+  font-size: 25px;
   transition: transform 0.2s;
 }
 
@@ -23,7 +23,7 @@
 .custom-nav-text {
   text-decoration: none;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .navbar-dark .navbar-nav > .nav-item > .active {
@@ -44,8 +44,22 @@
   color: #ffffff;
 }
 
+.navbar-collapse.collapse.in {
+  display: block !important;
+}
+
 @media only screen and (max-width: 992px) {
-  .navbar-dark .navbar-nav > .nav-item a:hover {
-    transform: scale(1.05);
+  .navbar-dark .navbar-nav > .nav-item:hover {
+    transform: scale(1.03);
+  }
+
+  .navbar-brand .nav-link {
+    font-size: 20px;
+  }
+
+  .custom-nav-text {
+    text-decoration: none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+    font-size: 15px;
   }
 }
