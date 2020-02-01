@@ -5,6 +5,7 @@ import Card from "./Card";
 import monteImg from "../Local_files/monte.jpg";
 import icecreamImg from "../Local_files/icecream.jpg";
 import quizImg from "../Local_files/quiz.png";
+import newsImg from "../Local_files/news.png";
 import "../Styles/Projects.css";
 
 const iceCream = {
@@ -24,7 +25,13 @@ const quiz = {
   img: quizImg,
   description: "desc"
 };
-const projects = [iceCream, monte, quiz];
+
+const news = {
+  title: "Community news-webpage",
+  img: newsImg,
+  description: "desc"
+};
+const projects = [iceCream, monte, quiz, news];
 
 function DialogBox(props) {
   return (
@@ -56,7 +63,7 @@ export default function ProjectCard() {
   return (
     <div className="row justify-content-center align-items-center mx-5">
       {projects.map(p => (
-        <div class="col-lg">
+        <div class="col-lg projectCard">
           <ButtonToolbar>
             <Card cardSize="">
               <div className="col-sm-">

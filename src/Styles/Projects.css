@@ -9,6 +9,10 @@
   width: 60%;
 }
 
+.projectCard {
+  min-width: 50%;
+}
+
 .text-box {
   margin-left: 20%;
   margin-right: 20%;
