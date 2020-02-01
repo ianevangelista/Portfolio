@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "ianevangelista.no/static/css/main.70c57f94.chunk.css",
-    "main.js": "ianevangelista.no/static/js/main.6952d885.chunk.js",
-    "main.js.map": "ianevangelista.no/static/js/main.6952d885.chunk.js.map",
+    "main.js": "ianevangelista.no/static/js/main.10b730c7.chunk.js",
+    "main.js.map": "ianevangelista.no/static/js/main.10b730c7.chunk.js.map",
     "runtime-main.js": "ianevangelista.no/static/js/runtime-main.83f73a7c.js",
     "runtime-main.js.map": "ianevangelista.no/static/js/runtime-main.83f73a7c.js.map",
     "static/js/2.d03d21c2.chunk.js": "ianevangelista.no/static/js/2.d03d21c2.chunk.js",
     "static/js/2.d03d21c2.chunk.js.map": "ianevangelista.no/static/js/2.d03d21c2.chunk.js.map",
     "index.html": "ianevangelista.no/index.html",
-    "precache-manifest.58601a3dfb69e2707d0c382dde735a71.js": "ianevangelista.no/precache-manifest.58601a3dfb69e2707d0c382dde735a71.js",
+    "precache-manifest.22a516d507fbc6523b42169513e59ea4.js": "ianevangelista.no/precache-manifest.22a516d507fbc6523b42169513e59ea4.js",
     "service-worker.js": "ianevangelista.no/service-worker.js",
     "static/css/main.70c57f94.chunk.css.map": "ianevangelista.no/static/css/main.70c57f94.chunk.css.map",
     "static/js/2.d03d21c2.chunk.js.LICENSE": "ianevangelista.no/static/js/2.d03d21c2.chunk.js.LICENSE",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.83f73a7c.js",
     "static/js/2.d03d21c2.chunk.js",
     "static/css/main.70c57f94.chunk.css",
-    "static/js/main.6952d885.chunk.js"
+    "static/js/main.10b730c7.chunk.js"
   ]
 }

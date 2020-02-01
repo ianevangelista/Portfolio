@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19f1ed37fb5743462bbe814880ac619e",
+    "revision": "3fae596dbb8c110ed1de2f9a0d62a955",
     "url": "ianevangelista.no/index.html"
   },
   {
-    "revision": "41b7883f7bc329309105",
+    "revision": "b095f635e92b851f7d94",
     "url": "ianevangelista.no/static/css/main.70c57f94.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "ianevangelista.no/static/js/2.d03d21c2.chunk.js.LICENSE"
   },
   {
-    "revision": "41b7883f7bc329309105",
-    "url": "ianevangelista.no/static/js/main.6952d885.chunk.js"
+    "revision": "b095f635e92b851f7d94",
+    "url": "ianevangelista.no/static/js/main.10b730c7.chunk.js"
   },
   {
     "revision": "cbbc383d88b2b73115a1",
