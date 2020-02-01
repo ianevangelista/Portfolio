@@ -48,7 +48,7 @@
   display: block !important;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1200px) {
   .navbar-dark .navbar-nav > .nav-item:hover {
     transform: scale(1.03);
   }
