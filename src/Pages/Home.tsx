@@ -106,12 +106,24 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid container direction="row">
-              <IconButton>
-                <GitHubIcon className={classes.icons} fontSize="large" />
-              </IconButton>
-              <IconButton>
-                <LinkedInIcon className={classes.icons} fontSize="large" />
-              </IconButton>
+              <a
+                href="https://github.com/ianevangelista"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconButton>
+                  <GitHubIcon className={classes.icons} fontSize="large" />
+                </IconButton>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ianevangelista/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconButton>
+                  <LinkedInIcon className={classes.icons} fontSize="large" />
+                </IconButton>
+              </a>
             </Grid>
           </Grid>
         </Grid>
