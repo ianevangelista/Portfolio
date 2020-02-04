@@ -15,9 +15,6 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { NavLink } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
-import "../Styles/Navigationbar.css";
 import {
   Grid,
   Box,
@@ -27,7 +24,6 @@ import {
   ListItem,
   ListItemText
 } from "@material-ui/core";
-import color from "@material-ui/core/colors/amber";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -64,16 +60,28 @@ const useStyles = makeStyles((theme: Theme) =>
     cvBtn: {
       [theme.breakpoints.down("xs")]: {
         display: "none"
+      },
+      transition: "transform 0.2s",
+      "&:hover": {
+        transform: "scale(1.1)"
       }
     },
     aboutBtn: {
       [theme.breakpoints.down("xs")]: {
         display: "none"
+      },
+      transition: "transform 0.2s",
+      "&:hover": {
+        transform: "scale(1.1)"
       }
     },
     projectsBtn: {
       [theme.breakpoints.down("xs")]: {
         display: "none"
+      },
+      transition: "transform 0.2s",
+      "&:hover": {
+        transform: "scale(1.1)"
       }
     },
     mobileMenuButton: {
