@@ -9,7 +9,14 @@
 
   <body>
     <div style="overflow-x: hidden;">
-      <div id="root"></div>
+      <div class="pointer"></div>
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script type="text/javascript">
+        $(document).mousemove(function(e) {
+          $(".pointer").css({ left: e.pageX, top: e.pageY });
+        });
+      </script>
     </div>
+    <div id="root"></div>
   </body>
 </html>
