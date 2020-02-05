@@ -12,7 +12,7 @@ import {
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-
+import SideBar from "../Components/SideBar";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -36,14 +36,14 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: theme.spacing(3),
       marginTop: theme.spacing(2),
       "@media (max-width:900px)": {
-        fontSize: "2.5rem"
+        fontSize: "2rem"
       }
     },
     info: {
       color: "white",
       marginTop: theme.spacing(2),
       "@media (max-width:900px)": {
-        fontSize: "1.2rem",
+        fontSize: "0.9rem",
         marginTop: theme.spacing(2)
       }
     },
@@ -58,15 +58,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     icons: {
       color: "white"
-    },
-    test: {
-      fontSize: "1.2rem",
-      "@media (min-width:600px)": {
-        fontSize: "1.5rem"
-      },
-      [theme.breakpoints.up("md")]: {
-        fontSize: "2.4rem"
-      }
     }
   })
 );
@@ -128,6 +119,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Paper>
+      <SideBar />
     </div>
   );
 };
