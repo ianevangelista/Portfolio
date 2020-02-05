@@ -4,11 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-
-import Paper from "@material-ui/core/Paper";
-import Slide from "@material-ui/core/Slide";
-import { createStyles } from "@material-ui/core/styles";
-
+import Slider from "../Components/Slider";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: any;
@@ -51,10 +47,17 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    color: "white"
+    color: "white",
+    "@media (max-width:900px)": {
+      width: 90
+    }
   },
   projectTabs: {
-    textTransform: "lowercase"
+    textTransform: "lowercase",
+    transition: "transform 0.2s",
+    "&:hover": {
+      transform: "scale(1.1)"
+    }
   },
   indicator: {
     backgroundColor: "white"
@@ -62,13 +65,43 @@ const useStyles = makeStyles((theme: Theme) => ({
   projectHeader: {
     color: "white",
     "@media (max-width:900px)": {
-      fontSize: "2rem"
+      fontSize: "2rem",
+      marginBottom: "40px"
     }
   },
   selectedTabs: {
     color: "white"
+  },
+  firstTab: {
+    transition: "transform 0.2s",
+    "&:hover": {
+      transform: "scale(1.1)"
+    }
   }
 }));
+
+const scrum = {
+  title: "Scrum project 2020",
+  desc: "Info"
+};
+const news = {
+  title: "Community news website",
+  desc: "Info"
+};
+const quiz = {
+  title: "How Dumb R U?",
+  desc: "Info"
+};
+const monte = {
+  title: "Three-Card Monte",
+  desc: "Info"
+};
+const rally = {
+  title: "IDI-Rally 2018",
+  desc: "Info"
+};
+
+const projects = [scrum, news, quiz, monte, rally];
 
 export default function VerticalTabs() {
   const classes = useStyles();
@@ -91,14 +124,14 @@ export default function VerticalTabs() {
         }}
       >
         > >
-        <Tab label="PROJECTS" {...a11yProps(0)} />
+        <Tab label="PROJECTS" {...a11yProps(0)} className={classes.firstTab} />
         <Tab
           label="scrum project 2020"
           {...a11yProps(1)}
           className={classes.projectTabs}
         />
         <Tab
-          label="community news paper"
+          label="community news website"
           {...a11yProps(2)}
           className={classes.projectTabs}
         />
@@ -129,70 +162,13 @@ export default function VerticalTabs() {
           selected works
         </Typography>
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Typography variant="h6" className={classes.selectedTabs}>
-          <SimpleSlide text={"Prosjekt 1"} />
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <Typography variant="h6" className={classes.selectedTabs}>
-          <SimpleSlide text={"Prosjekt 2"} />
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        <Typography variant="h6" className={classes.selectedTabs}>
-          <SimpleSlide text={"Prosjekt 3"} />
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        <Typography variant="h6" className={classes.selectedTabs}>
-          <SimpleSlide text={"Prosjekt 4"} />
-        </Typography>
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        <Typography variant="h6" className={classes.selectedTabs}>
-          <SimpleSlide text={"Prosjekt 5"} />
-        </Typography>
-      </TabPanel>
+      {projects.map((p: any, i: number) => (
+        <TabPanel value={value} index={i + 1}>
+          <Typography variant="h6" className={classes.selectedTabs}>
+            <Slider title={p.title} />
+          </Typography>
+        </TabPanel>
+      ))}
     </div>
   );
 }
-
-const newStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      height: 180
-    },
-    wrapper: {
-      width: 100 + theme.spacing(2)
-    },
-    paper: {
-      zIndex: 1,
-      position: "relative",
-      margin: theme.spacing(1),
-      background: "transparent",
-      boxShadow: "none",
-      color: "white"
-    }
-  })
-);
-
-const SimpleSlide = (props: any) => {
-  const classes = newStyles();
-
-  return (
-    <div className={classes.root}>
-      <div className={classes.wrapper}>
-        <Slide
-          direction="left"
-          in={true}
-          mountOnEnter
-          unmountOnExit
-          timeout={{ enter: 600 }}
-        >
-          <Paper className={classes.paper}>{props.text}</Paper>
-        </Slide>
-      </div>
-    </div>
-  );
-};
