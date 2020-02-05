@@ -11,7 +11,7 @@ const newStyles = makeStyles((theme: Theme) =>
     wrapper: {
       width: 700 + theme.spacing(2),
       "@media (max-width:900px)": {
-        width: 220
+        width: 180
       }
     },
     title: {
@@ -36,7 +36,7 @@ const Slider = (props: any) => {
           timeout={{ enter: 600 }}
         >
           <Typography variant="h3" className={classes.title}>
-            {props.title}
+            {props.project.title}
           </Typography>
         </Slide>
       </div>

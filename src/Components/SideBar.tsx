@@ -53,10 +53,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
   },
   projectTabs: {
-    textTransform: "lowercase",
     transition: "transform 0.2s",
     "&:hover": {
       transform: "scale(1.1)"
+    },
+    "@media (max-width:900px)": {
+      fontSize: "0.7rem"
     }
   },
   indicator: {
@@ -65,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   projectHeader: {
     color: "white",
     "@media (max-width:900px)": {
-      fontSize: "2rem",
+      fontSize: "1.7rem",
       marginBottom: "40px"
     }
   },
@@ -73,19 +75,23 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: "white"
   },
   firstTab: {
+    fontSize: "1.75rem",
     transition: "transform 0.2s",
     "&:hover": {
       transform: "scale(1.1)"
+    },
+    "@media (max-width:900px)": {
+      fontSize: "1rem"
     }
   }
 }));
 
 const scrum = {
-  title: "Scrum project 2020",
+  title: "Scrum Project 2020",
   desc: "Info"
 };
 const news = {
-  title: "Community news website",
+  title: "Community News Website",
   desc: "Info"
 };
 const quiz = {
@@ -103,7 +109,7 @@ const rally = {
 
 const projects = [scrum, news, quiz, monte, rally];
 
-export default function VerticalTabs() {
+const SideBar = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -125,31 +131,13 @@ export default function VerticalTabs() {
       >
         > >
         <Tab label="PROJECTS" {...a11yProps(0)} className={classes.firstTab} />
-        <Tab
-          label="scrum project 2020"
-          {...a11yProps(1)}
-          className={classes.projectTabs}
-        />
-        <Tab
-          label="community news website"
-          {...a11yProps(2)}
-          className={classes.projectTabs}
-        />
-        <Tab
-          label="how dumb r u?"
-          {...a11yProps(3)}
-          className={classes.projectTabs}
-        />
-        <Tab
-          label="three-card monte"
-          {...a11yProps(4)}
-          className={classes.projectTabs}
-        />
-        <Tab
-          label="idi-rally"
-          {...a11yProps(5)}
-          className={classes.projectTabs}
-        />
+        {projects.map((p: any, i) => (
+          <Tab
+            label={p.title}
+            {...a11yProps(i + 1)}
+            className={classes.projectTabs}
+          />
+        ))}
       </Tabs>
       <TabPanel value={value} index={0}>
         <Typography variant="h1" className={classes.projectHeader}>
@@ -165,10 +153,12 @@ export default function VerticalTabs() {
       {projects.map((p: any, i: number) => (
         <TabPanel value={value} index={i + 1}>
           <Typography variant="h6" className={classes.selectedTabs}>
-            <Slider title={p.title} />
+            <Slider project={p} />
           </Typography>
         </TabPanel>
       ))}
     </div>
   );
-}
+};
+
+export default SideBar;
