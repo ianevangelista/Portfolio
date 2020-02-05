@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRight: `1px solid ${theme.palette.divider}`,
     color: "white",
     "@media (max-width:900px)": {
+      width: 140
+    },
+    "@media (max-width:600px)": {
       width: 90
     }
   },
@@ -81,7 +84,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       transform: "scale(1.1)"
     },
     "@media (max-width:900px)": {
-      fontSize: "1rem"
+      fontSize: "0.85rem"
     }
   }
 }));
