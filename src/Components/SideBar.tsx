@@ -5,6 +5,8 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Slider from "../Components/Slider";
+import { Grid } from "@material-ui/core";
+import Project from "./Project";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: any;
@@ -40,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 400,
+    height: 600,
     backgroundImage: `url(./Local_files/background2.png)`,
     backgroundPosition: "center",
     backgroundSize: "cover"
@@ -132,10 +134,10 @@ const SideBar = () => {
           indicator: classes.indicator
         }}
       >
-        > >
         <Tab label="PROJECTS" {...a11yProps(0)} className={classes.firstTab} />
         {projects.map((p: any, i) => (
           <Tab
+            key={i + 1}
             label={p.title}
             {...a11yProps(i + 1)}
             className={classes.projectTabs}
@@ -143,18 +145,31 @@ const SideBar = () => {
         ))}
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Typography variant="h1" className={classes.projectHeader}>
-          Read some
-        </Typography>
-        <Typography variant="h1" className={classes.projectHeader}>
-          of my
-        </Typography>
-        <Typography variant="h1" className={classes.projectHeader}>
-          selected works
-        </Typography>
+        <Grid container direction="row">
+          <Grid item>
+            <Grid container direction="row">
+              <Typography variant="h1" className={classes.projectHeader}>
+                Read some
+              </Typography>
+            </Grid>
+            <Grid container direction="row">
+              <Typography variant="h1" className={classes.projectHeader}>
+                of my
+              </Typography>
+            </Grid>
+            <Grid container direction="row">
+              <Typography variant="h1" className={classes.projectHeader}>
+                selected works
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Project />
+          </Grid>
+        </Grid>
       </TabPanel>
       {projects.map((p: any, i: number) => (
-        <TabPanel value={value} index={i + 1}>
+        <TabPanel value={value} index={i + 1} key={i + 1}>
           <Typography variant="h6" className={classes.selectedTabs}>
             <Slider project={p} />
           </Typography>
