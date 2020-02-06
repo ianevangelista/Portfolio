@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Slider from "../Components/Slider";
 import { Grid } from "@material-ui/core";
-import Project from "./Project";
+import AllProjects from "./AllProjects";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: any;
@@ -47,6 +47,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundPosition: "center",
     backgroundSize: "cover"
   },
+  firstTab: {
+    fontSize: "1.75rem",
+    transition: "transform 0.2s",
+    "&:hover": {
+      transform: "scale(1.1)"
+    },
+    "@media (max-width:900px)": {
+      fontSize: "0.85rem"
+    }
+  },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
     color: "white",
@@ -54,7 +64,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       width: 140
     },
     "@media (max-width:600px)": {
-      width: 90
+      width: 190
     }
   },
   projectTabs: {
@@ -66,53 +76,45 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "0.7rem"
     }
   },
+  projectHeader: {
+    color: "white",
+    marginRight: "80px",
+    "@media (max-width:900px)": {
+      fontSize: "1.7rem",
+      marginBottom: "40px",
+      marginRight: 20
+    }
+  },
   indicator: {
     backgroundColor: "white"
   },
-  projectHeader: {
-    color: "white",
-    "@media (max-width:900px)": {
-      fontSize: "1.7rem",
-      marginBottom: "40px"
-    }
-  },
   selectedTabs: {
     color: "white"
-  },
-  firstTab: {
-    fontSize: "1.75rem",
-    transition: "transform 0.2s",
-    "&:hover": {
-      transform: "scale(1.1)"
-    },
-    "@media (max-width:900px)": {
-      fontSize: "0.85rem"
-    }
   }
 }));
 
-const scrum = {
-  title: "Scrum Project 2020",
-  desc: "Info"
-};
-const news = {
-  title: "Community News Website",
-  desc: "Info"
-};
-const quiz = {
-  title: "How Dumb R U?",
-  desc: "Info"
-};
-const monte = {
-  title: "Three-Card Monte",
-  desc: "Info"
-};
-const rally = {
-  title: "IDI-Rally 2018",
-  desc: "Info"
-};
-
-const projects = [scrum, news, quiz, monte, rally];
+const allProjects: { title: string; imgPath: string }[] = [
+  {
+    title: "Scrum Project 2020",
+    imgPath: `./Local_files/harmoni.png`
+  },
+  {
+    title: "Community News Website",
+    imgPath: `./Local_files/news.png`
+  },
+  {
+    title: "How Dumb R U?",
+    imgPath: `./Local_files/quiz.png`
+  },
+  {
+    title: "Three-Card Monte",
+    imgPath: `./Local_files/monte.jpg`
+  },
+  {
+    title: "IDI-Rally 2018",
+    imgPath: `./Local_files/icecream.jpg`
+  }
+];
 
 const SideBar = () => {
   const classes = useStyles();
@@ -134,8 +136,8 @@ const SideBar = () => {
           indicator: classes.indicator
         }}
       >
-        <Tab label="PROJECTS" {...a11yProps(0)} className={classes.firstTab} />
-        {projects.map((p: any, i) => (
+        <Tab label="Projects" {...a11yProps(0)} className={classes.firstTab} />
+        {allProjects.map((p: any, i) => (
           <Tab
             key={i + 1}
             label={p.title}
@@ -164,11 +166,11 @@ const SideBar = () => {
             </Grid>
           </Grid>
           <Grid item>
-            <Project />
+            <AllProjects />
           </Grid>
         </Grid>
       </TabPanel>
-      {projects.map((p: any, i: number) => (
+      {allProjects.map((p: any, i: number) => (
         <TabPanel value={value} index={i + 1} key={i + 1}>
           <Typography variant="h6" className={classes.selectedTabs}>
             <Slider project={p} />

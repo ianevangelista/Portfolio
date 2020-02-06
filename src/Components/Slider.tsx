@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Slide from "@material-ui/core/Slide";
 import { Typography } from "@material-ui/core";
-import Project from "./Project";
 
 const newStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -40,7 +39,6 @@ const Slider = (props: any) => {
             {props.project.title}
           </Typography>
         </Slide>
-        <Project />
       </div>
     </div>
   );

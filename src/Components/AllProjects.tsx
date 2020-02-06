@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Project = (props: any) => {
+const AllProjects = () => {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -142,4 +142,4 @@ const Project = (props: any) => {
   );
 };
 
-export default Project;
+export default AllProjects;
