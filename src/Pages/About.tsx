@@ -1,19 +1,21 @@
 import React from "react";
-import "../Styles/About.css";
-export default function About() {
+import { Typography, makeStyles, createStyles, Theme } from "@material-ui/core";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      color: "white",
+      marginTop: 40
+    }
+  })
+);
+const About = () => {
+  const classes = useStyles();
   return (
-    <div>
-      <div id="about" className="about-image">
-        <div className="row">
-          <div className="col-6 mx-auto text-center">
-            <h1 className="text-white mb-3">OM MEG</h1>
-            <h4 className="text-white">
-              2.klasse dataingeniør-student på Norges
-              teknisk-naturvitenskapelige universitet.
-            </h4>
-          </div>
-        </div>
-      </div>
+    <div className={classes.root}>
+      <Typography>Hei</Typography>
     </div>
   );
-}
+};
+
+export default About;

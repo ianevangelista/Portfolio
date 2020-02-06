@@ -13,6 +13,7 @@ import {
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import SideBar from "../Components/SideBar";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {

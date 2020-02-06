@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 600,
+    height: 400,
     backgroundImage: `url(./Local_files/background2.png)`,
     backgroundPosition: "center",
     backgroundSize: "cover"
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginRight: "80px",
     "@media (max-width:900px)": {
       fontSize: "1.7rem",
-      marginBottom: "40px",
+      marginBottom: 5,
       marginRight: 20
     }
   },

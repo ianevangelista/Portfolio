@@ -35,7 +35,8 @@ const allProjects: { title: string; imgPath: string }[] = [
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 400,
-    flexGrow: 1
+    flexGrow: 1,
+    marginTop: 20
   },
   header: {
     display: "flex",
@@ -46,11 +47,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   img: {
-    height: 255,
+    height: 270,
     display: "block",
     maxWidth: 400,
     overflow: "hidden",
-    width: "100%"
+    width: "100%",
+    "@media (max-width:900px)": {
+      height: 190
+    }
   },
   stepper: {
     backgroundColor: "transparent",
@@ -80,9 +84,6 @@ const AllProjects = () => {
 
   return (
     <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
-        <Typography>{allProjects[activeStep].title}</Typography>
-      </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
