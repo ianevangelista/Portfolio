@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import MobileStepper from "@material-ui/core/MobileStepper";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
@@ -34,9 +32,17 @@ const allProjects: { title: string; imgPath: string }[] = [
 ];
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 400,
+    maxWidth: 500,
     flexGrow: 1,
-    marginTop: 20
+    marginTop: 40,
+
+    "@media (max-width:1367px)": {
+      marginTop: 0
+    },
+    "@media (max-width:900px)": {
+      marginTop: 20,
+      maxWidth: 240
+    }
   },
   header: {
     display: "flex",
@@ -49,11 +55,11 @@ const useStyles = makeStyles(theme => ({
   img: {
     height: 270,
     display: "block",
-    maxWidth: 400,
+    maxWidth: 500,
     overflow: "hidden",
-    width: "100%",
+    objectFit: "cover",
     "@media (max-width:900px)": {
-      height: 190
+      height: 130
     }
   },
   stepper: {
@@ -62,6 +68,14 @@ const useStyles = makeStyles(theme => ({
   },
   btn: {
     color: "white"
+  },
+  imgContainer: {
+    maxWidth: 500,
+    display: "flex",
+    justifyContent: "center",
+    "@media (max-width:900px)": {
+      maxWidth: 240
+    }
   }
 }));
 
@@ -93,11 +107,13 @@ const AllProjects = () => {
         {allProjects.map((step: any, index: number) => (
           <div key={step.title}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img
-                className={classes.img}
-                src={step.imgPath}
-                alt={step.title}
-              />
+              <div className={classes.imgContainer}>
+                <img
+                  className={classes.img}
+                  src={step.imgPath}
+                  alt={step.title}
+                />
+              </div>
             ) : null}
           </div>
         ))}

@@ -8,6 +8,7 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+import CardMedia from "@material-ui/core/CardMedia";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const allProjects: { title: string; imgPath: string }[] = [
@@ -46,7 +47,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   img: {
-    height: 255,
+    height: 455,
     display: "block",
     maxWidth: 400,
     overflow: "hidden",
@@ -92,10 +93,10 @@ const Project = (props: any) => {
         {allProjects.map((step: any, index: number) => (
           <div key={step.title}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img
+              <CardMedia
                 className={classes.img}
                 src={step.imgPath}
-                alt={step.title}
+                title={step.title}
               />
             ) : null}
           </div>
