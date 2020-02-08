@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "../Styles/Home.css";
 import Navigationbar from "../Components/Navigationbar";
 import {
   makeStyles,
@@ -8,11 +9,13 @@ import {
   Avatar,
   Grid,
   Typography,
-  IconButton
+  IconButton,
+  Fade
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import SideBar from "../Components/SideBar";
+import Loading from "../Components/Loading/Loading";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -64,64 +67,78 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 const Home = () => {
   const classes = useStyles();
+  const [isLoading, setLoading] = useState(true);
 
+  function checkLoading() {
+    return new Promise(resolve => setTimeout(() => resolve(), 2500));
+  }
+
+  useEffect(() => {
+    checkLoading().then(() => setLoading(false));
+  }, [isLoading]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
-    <div>
-      <Navigationbar />
-      <Paper square className={classes.root}>
-        <Grid container direction="row" className={classes.nameBox}>
-          <Grid container direction="row">
-            <Avatar
-              variant="square"
-              alt="Ian Evangelista"
-              src={"./Local_files/ian.png"}
-              className={classes.image}
-            />
-            <Grid>
-              <Typography className={classes.name} variant="h2">
-                IAN
-              </Typography>
-              <Typography className={classes.name} variant="h2">
-                EVANGELISTA
-              </Typography>
+    <Fade in={true} timeout={1500}>
+      <div>
+        <Navigationbar />
+        <Paper square className={classes.root}>
+          <Grid container direction="row" className={classes.nameBox}>
+            <Grid container direction="row">
+              <Avatar
+                variant="square"
+                alt="Ian Evangelista"
+                src={"./Local_files/ian.png"}
+                className={classes.image}
+              />
+              <Grid>
+                <Typography className={classes.name} variant="h2">
+                  IAN
+                </Typography>
+                <Typography className={classes.name} variant="h2">
+                  EVANGELISTA
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid container direction="row" className={classes.infoBox}>
+              <Grid container direction="row">
+                <Typography className={classes.info} variant="h4">
+                  Norwegian University of Science and Technology
+                </Typography>
+              </Grid>
+              <Grid container direction="row">
+                <Typography className={classes.info} variant="h4">
+                  Computer Engineering
+                </Typography>
+              </Grid>
+              <Grid container direction="row">
+                <a
+                  href="https://github.com/ianevangelista"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconButton>
+                    <GitHubIcon className={classes.icons} fontSize="large" />
+                  </IconButton>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ianevangelista/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconButton>
+                    <LinkedInIcon className={classes.icons} fontSize="large" />
+                  </IconButton>
+                </a>
+              </Grid>
             </Grid>
           </Grid>
-          <Grid container direction="row" className={classes.infoBox}>
-            <Grid container direction="row">
-              <Typography className={classes.info} variant="h4">
-                Norwegian University of Science and Technology
-              </Typography>
-            </Grid>
-            <Grid container direction="row">
-              <Typography className={classes.info} variant="h4">
-                Computer Engineering
-              </Typography>
-            </Grid>
-            <Grid container direction="row">
-              <a
-                href="https://github.com/ianevangelista"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconButton>
-                  <GitHubIcon className={classes.icons} fontSize="large" />
-                </IconButton>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ianevangelista/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconButton>
-                  <LinkedInIcon className={classes.icons} fontSize="large" />
-                </IconButton>
-              </a>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Paper>
-      <SideBar />
-    </div>
+        </Paper>
+        <SideBar />
+      </div>
+    </Fade>
   );
 };
 export default Home;
