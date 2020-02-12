@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const allProjects: { title: string; imgPath: string }[] = [
   {
     title: "Scrum Project 2020",
-    imgPath: `./Local_files/harmoni.png`
+    imgPath: `./Local_files/Harmoni/harmoni.png`
   },
   {
     title: "Community News Website",
@@ -119,7 +119,7 @@ const allProjects: { title: string; imgPath: string }[] = [
   }
 ];
 
-const SideBar = () => {
+const SideBar = (props: any) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -140,7 +140,7 @@ const SideBar = () => {
         }}
       >
         <Tab label="Projects" {...a11yProps(0)} className={classes.firstTab} />
-        {allProjects.map((p: any, i) => (
+        {allProjects.map((p: any, i: number) => (
           <Tab
             key={i + 1}
             label={p.title}

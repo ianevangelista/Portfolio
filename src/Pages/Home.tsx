@@ -64,16 +64,72 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   })
 );
+
+const resources: { title: string; imgPath: string; isProject: boolean }[] = [
+  {
+    title: "Scrum Project 2020",
+    imgPath: `./Local_files/Harmoni/harmoni.png`,
+    isProject: true
+  },
+  {
+    title: "Community News Website",
+    imgPath: `./Local_files/news.png`,
+    isProject: true
+  },
+  {
+    title: "How Dumb R U?",
+    imgPath: `./Local_files/quiz.png`,
+    isProject: true
+  },
+  {
+    title: "Three-Card Monte",
+    imgPath: `./Local_files/monte.jpg`,
+    isProject: true
+  },
+  {
+    title: "IDI-Rally 2018",
+    imgPath: `./Local_files/icecream.jpg`,
+    isProject: true
+  },
+  {
+    title: "Background 1",
+    imgPath: `./Local_files/bacground.png`,
+    isProject: true
+  },
+  {
+    title: "Background 2",
+    imgPath: `./Local_files/background2.png`,
+    isProject: true
+  }
+];
 const Home = () => {
   const classes = useStyles();
   const [isLoading, setLoading] = useState(true);
+  //const projects: any = [];
 
   function checkLoading() {
-    return new Promise(resolve => setTimeout(() => resolve(), 2500));
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+      }, 2500);
+    });
   }
-
   useEffect(() => {
-    checkLoading().then(() => setLoading(false));
+    const checkImage = (path: any) => {
+      new Promise(resolve => {
+        const img = new Image();
+        img.src = path.imgPath;
+        img.onload = () => {
+          resolve({ img, status: "ok" });
+        };
+
+        img.onerror = () => resolve({ img, status: "error" });
+        //projects.push({ title, imgPath });
+      });
+    };
+    Promise.all(resources.map(checkImage)).then(() => {
+      checkLoading().then(() => setLoading(false));
+    });
   }, [isLoading]);
 
   if (isLoading) {
@@ -135,7 +191,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </Paper>
-        <SideBar />
+        <SideBar id="projects" />
       </div>
     </Fade>
   );

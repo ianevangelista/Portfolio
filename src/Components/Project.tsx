@@ -1,20 +1,17 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import MobileStepper from "@material-ui/core/MobileStepper";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import CardMedia from "@material-ui/core/CardMedia";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const allProjects: { title: string; imgPath: string }[] = [
   {
     title: "Scrum Project 2020",
-    imgPath: `./Local_files/harmoni.png`
+    imgPath: `./Local_files/Harmoni/harmoni.png`
   },
   {
     title: "Community News Website",
@@ -47,11 +44,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   img: {
-    height: 455,
+    height: 270,
     display: "block",
-    maxWidth: 400,
+    maxWidth: 500,
     overflow: "hidden",
-    width: "100%"
+    objectFit: "cover",
+    "@media (max-width:900px)": {
+      height: 130
+    }
   },
   stepper: {
     backgroundColor: "transparent",
@@ -59,6 +59,14 @@ const useStyles = makeStyles(theme => ({
   },
   btn: {
     color: "white"
+  },
+  imgContainer: {
+    maxWidth: 400,
+    display: "flex",
+    justifyContent: "center",
+    "@media (max-width:900px)": {
+      maxWidth: 240
+    }
   }
 }));
 
@@ -81,9 +89,6 @@ const Project = (props: any) => {
 
   return (
     <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
-        <Typography>{allProjects[activeStep].title}</Typography>
-      </Paper>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -93,11 +98,13 @@ const Project = (props: any) => {
         {allProjects.map((step: any, index: number) => (
           <div key={step.title}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <CardMedia
-                className={classes.img}
-                src={step.imgPath}
-                title={step.title}
-              />
+              <div className={classes.imgContainer}>
+                <img
+                  className={classes.img}
+                  src={step.imgPath}
+                  alt={step.title}
+                />
+              </div>
             ) : null}
           </div>
         ))}

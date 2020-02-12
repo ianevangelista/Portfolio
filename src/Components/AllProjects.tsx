@@ -11,7 +11,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const allProjects: { title: string; imgPath: string }[] = [
   {
     title: "Scrum Project 2020",
-    imgPath: `./Local_files/harmoni.png`
+    imgPath: `./Local_files/Harmoni/harmoni.png`
   },
   {
     title: "Community News Website",

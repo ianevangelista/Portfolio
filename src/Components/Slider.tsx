@@ -1,7 +1,8 @@
 import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Slide from "@material-ui/core/Slide";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import Project from "./Project";
 
 const newStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,17 +29,22 @@ const Slider = (props: any) => {
   return (
     <div className={classes.root}>
       <div className={classes.wrapper}>
-        <Slide
-          direction="left"
-          in={true}
-          mountOnEnter
-          unmountOnExit
-          timeout={{ enter: 600 }}
-        >
-          <Typography variant="h3" className={classes.title}>
-            {props.project.title}
-          </Typography>
-        </Slide>
+        <Grid container direction="row">
+          <Slide
+            direction="left"
+            in={true}
+            mountOnEnter
+            unmountOnExit
+            timeout={{ enter: 600 }}
+          >
+            <Typography variant="h3" className={classes.title}>
+              {props.project.title}
+            </Typography>
+          </Slide>
+        </Grid>
+        <Grid container direction="row">
+          <Project />
+        </Grid>
       </div>
     </div>
   );

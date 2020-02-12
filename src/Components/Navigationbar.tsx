@@ -14,7 +14,6 @@ import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MenuIcon from "@material-ui/icons/Menu";
-
 import {
   Grid,
   Box,
@@ -201,50 +200,6 @@ const NavigationBar = () => {
         </List>
       </Drawer>
     </div>
-
-    /*
-    <nav
-      className="navbar py-0 navbar-expand-xl navbar-dark sticky-top navigationbar-image"
-      role="navigation"
-    >
-      <li className="navbar-brand">
-        <NavLink className="nav-link" exact to="/">
-          IAN EVANGELISTA
-        </NavLink>
-      </li>
-      <button
-        className="navbar-toggler collapsed"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="nav navbar-nav">
-          <li className="nav-item custom-nav-text mr-4 my-auto">
-            <a
-              href={"ianevangelista.no"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              CURRICULUM VITAE
-            </a>
-          </li>
-          <li className="nav-item custom-nav-text mr-4 my-auto">
-            <Link to="/#about">OM MEG</Link>
-          </li>
-
-          <li className="nav-item custom-nav-text mr-4 my-auto">
-            <Link to="/#projects">PROSJEKTER</Link>
-          </li>
-          <li className="nav-item custom-nav-text mr-4 my-auto">
-            <Link to="/#contact">KONTAKT MEG</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>*/
   );
 };
 export default NavigationBar;
