@@ -42,8 +42,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 400,
-    backgroundImage: `url(./Local_files/background2.png)`,
+    height: 500,
+    backgroundImage: `url(./Local_files/Background/background2.jpg)`,
     backgroundPosition: "center",
     backgroundSize: "cover"
   },
@@ -96,29 +96,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-const allProjects: { title: string; imgPath: string }[] = [
-  {
-    title: "Scrum Project 2020",
-    imgPath: `./Local_files/Harmoni/harmoni.png`
-  },
-  {
-    title: "Community News Website",
-    imgPath: `./Local_files/news.png`
-  },
-  {
-    title: "How Dumb R U?",
-    imgPath: `./Local_files/quiz.png`
-  },
-  {
-    title: "Three-Card Monte",
-    imgPath: `./Local_files/monte.jpg`
-  },
-  {
-    title: "IDI-Rally 2018",
-    imgPath: `./Local_files/icecream.jpg`
-  }
-];
-
 const SideBar = (props: any) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -140,7 +117,7 @@ const SideBar = (props: any) => {
         }}
       >
         <Tab label="Projects" {...a11yProps(0)} className={classes.firstTab} />
-        {allProjects.map((p: any, i: number) => (
+        {props.projects.map((p: any, i: number) => (
           <Tab
             key={i + 1}
             label={p.title}
@@ -169,11 +146,11 @@ const SideBar = (props: any) => {
             </Grid>
           </Grid>
           <Grid item>
-            <AllProjects />
+            <AllProjects projects={props.projects} />
           </Grid>
         </Grid>
       </TabPanel>
-      {allProjects.map((p: any, i: number) => (
+      {props.projects.map((p: any, i: number) => (
         <TabPanel value={value} index={i + 1} key={i + 1}>
           <Typography variant="h6" className={classes.selectedTabs}>
             <Slider project={p} />

@@ -138,7 +138,7 @@ const NavigationBar = () => {
           <Box className={classes.rightButtons}>
             <Grid container direction="row" alignItems="center">
               <a
-                href="./Local_files/cv.pdf"
+                href="./Local_files/Etc/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

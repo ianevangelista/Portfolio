@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const AllProjects = () => {
+const AllProjects = (props: any) => {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -104,7 +104,7 @@ const AllProjects = () => {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {allProjects.map((step: any, index: number) => (
+        {props.projects.map((step: any, index: number) => (
           <div key={step.title}>
             {Math.abs(activeStep - index) <= 2 ? (
               <div className={classes.imgContainer}>

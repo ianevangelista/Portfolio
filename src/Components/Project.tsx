@@ -8,32 +8,20 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const allProjects: { title: string; imgPath: string }[] = [
-  {
-    title: "Scrum Project 2020",
-    imgPath: `./Local_files/Harmoni/harmoni.png`
-  },
-  {
-    title: "Community News Website",
-    imgPath: `./Local_files/news.png`
-  },
-  {
-    title: "How Dumb R U?",
-    imgPath: `./Local_files/quiz.png`
-  },
-  {
-    title: "Three-Card Monte",
-    imgPath: `./Local_files/monte.jpg`
-  },
-  {
-    title: "IDI-Rally 2018",
-    imgPath: `./Local_files/icecream.jpg`
-  }
-];
+
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 400,
-    flexGrow: 1
+    maxWidth: 500,
+    flexGrow: 1,
+    marginTop: 40,
+
+    "@media (max-width:1367px)": {
+      marginTop: 0
+    },
+    "@media (max-width:900px)": {
+      marginTop: 20,
+      maxWidth: 240
+    }
   },
   header: {
     display: "flex",
@@ -61,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   imgContainer: {
-    maxWidth: 400,
+    maxWidth: 500,
     display: "flex",
     justifyContent: "center",
     "@media (max-width:900px)": {
@@ -74,7 +62,7 @@ const Project = (props: any) => {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = allProjects.length;
+  const maxSteps = props.project.allImages.length;
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
@@ -95,14 +83,14 @@ const Project = (props: any) => {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {allProjects.map((step: any, index: number) => (
-          <div key={step.title}>
+        {props.project.allImages.map((step: any, index: number) => (
+          <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
               <div className={classes.imgContainer}>
                 <img
                   className={classes.img}
-                  src={step.imgPath}
-                  alt={step.title}
+                  src={step}
+                  alt={props.project.title}
                 />
               </div>
             ) : null}

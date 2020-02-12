@@ -10,7 +10,7 @@ const newStyles = makeStyles((theme: Theme) =>
       height: 480
     },
     wrapper: {
-      width: 700 + theme.spacing(2),
+      width: "100vw" + theme.spacing(2),
       "@media (max-width:900px)": {
         width: 180
       }
@@ -18,6 +18,16 @@ const newStyles = makeStyles((theme: Theme) =>
     title: {
       "@media (max-width:900px)": {
         fontSize: "1.2rem"
+      }
+    },
+    info: {
+      marginTop: 40,
+      marginLeft: 50,
+      width: "40vw",
+      "@media (max-width:900px)": {
+        fontSize: "0.9rem",
+        width: "20vw",
+        marginLeft: 30
       }
     }
   })
@@ -43,7 +53,12 @@ const Slider = (props: any) => {
           </Slide>
         </Grid>
         <Grid container direction="row">
-          <Project />
+          <Grid item>
+            <Project project={props.project} />
+          </Grid>
+          <Grid item className={classes.info}>
+            <Typography variant="h6">{props.project.info}</Typography>
+          </Grid>
         </Grid>
       </div>
     </div>
