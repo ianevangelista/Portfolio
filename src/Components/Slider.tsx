@@ -7,13 +7,13 @@ import Project from "./Project";
 const newStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      height: 480
+      height: 480,
+      "@media (max-width:800px)": {
+        width: 215
+      }
     },
     wrapper: {
-      width: "100vw" + theme.spacing(2),
-      "@media (max-width:900px)": {
-        width: 180
-      }
+      width: "100vw" + theme.spacing(2)
     },
     title: {
       "@media (max-width:900px)": {
@@ -25,9 +25,14 @@ const newStyles = makeStyles((theme: Theme) =>
       marginLeft: 50,
       width: "40vw",
       "@media (max-width:900px)": {
-        fontSize: "0.9rem",
-        width: "20vw",
-        marginLeft: 30
+        marginLeft: 0,
+        marginTop: 10
+      }
+    },
+    text: {
+      "@media (max-width:900px)": {
+        fontSize: "0.7rem",
+        width: "52vw"
       }
     }
   })
@@ -57,7 +62,9 @@ const Slider = (props: any) => {
             <Project project={props.project} />
           </Grid>
           <Grid item className={classes.info}>
-            <Typography variant="h6">{props.project.info}</Typography>
+            <Typography className={classes.text} variant="h6">
+              {props.project.info}
+            </Typography>
           </Grid>
         </Grid>
       </div>

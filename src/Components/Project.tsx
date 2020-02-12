@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "center",
     "@media (max-width:900px)": {
-      maxWidth: 240
+      maxWidth: 200
     }
   }
 }));

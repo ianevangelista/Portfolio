@@ -32,7 +32,7 @@ const allProjects: { title: string; imgPath: string }[] = [
 ];
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 500,
+    maxWidth: 450,
     flexGrow: 1,
     marginTop: 40,
 
@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
   img: {
     height: 270,
     display: "block",
-    maxWidth: 500,
+    maxWidth: 450,
     overflow: "hidden",
     objectFit: "cover",
     "@media (max-width:900px)": {
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   imgContainer: {
-    maxWidth: 500,
+    maxWidth: 450,
     display: "flex",
     justifyContent: "center",
     "@media (max-width:900px)": {

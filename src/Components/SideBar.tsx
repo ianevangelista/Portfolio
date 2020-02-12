@@ -60,11 +60,13 @@ const useStyles = makeStyles((theme: Theme) => ({
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
     color: "white",
+    width: 170,
+
     "@media (max-width:900px)": {
-      width: 140
+      width: 150
     },
     "@media (max-width:600px)": {
-      width: 190
+      width: 130
     }
   },
   projectTabs: {
@@ -73,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       transform: "scale(1.1)"
     },
     "@media (max-width:900px)": {
-      fontSize: "0.7rem"
+      fontSize: "0.7rem",
     }
   },
   projectHeader: {
