@@ -42,10 +42,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 500,
+    height: 380,
     backgroundImage: `url(./Local_files/Background/background2.jpg)`,
     backgroundPosition: "center",
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    "@media (max-width: 450px)": {
+      height: 330
+    }
+  },
+  tabContainer: {
+    "@media (max-width: 450px)": {
+      minWidth: "150px"
+    }
   },
   firstTab: {
     fontSize: "1.75rem",
@@ -53,21 +61,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     "&:hover": {
       transform: "scale(1.1)"
     },
-    "@media (max-width:900px)": {
+    "@media (max-width:450px)": {
       fontSize: "0.85rem"
     }
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    color: "white",
-    width: 170,
-
-    "@media (max-width:900px)": {
-      width: 150
-    },
-    "@media (max-width:600px)": {
-      width: 130
-    }
+    color: "white"
   },
   projectTabs: {
     transition: "transform 0.2s",
@@ -75,19 +75,20 @@ const useStyles = makeStyles((theme: Theme) => ({
       transform: "scale(1.1)"
     },
     "@media (max-width:900px)": {
-      fontSize: "0.7rem",
+      fontSize: "0.7rem"
     }
   },
   projectHeader: {
     color: "white",
     marginRight: "30px",
-    "@media (max-width:1367px)": {
-      fontSize: "2rem"
+    "@media (max-width:1024px)": {
+      fontSize: "3.1rem"
     },
-    "@media (max-width:900px)": {
+    "@media (max-width:450px)": {
       fontSize: "1.7rem",
       marginBottom: 5,
-      marginRight: 20
+      marginLeft: "auto",
+      marginRight: "auto"
     }
   },
   indicator: {
@@ -95,6 +96,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   selectedTabs: {
     color: "white"
+  },
+  gridHeader: {
+    "@media (max-width:450px)": {
+      marginLeft: "auto",
+      marginRight: "auto"
+    }
   }
 }));
 
@@ -108,29 +115,36 @@ const SideBar = (props: any) => {
 
   return (
     <div className={classes.root}>
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        className={classes.tabs}
-        classes={{
-          indicator: classes.indicator
-        }}
-      >
-        <Tab label="Projects" {...a11yProps(0)} className={classes.firstTab} />
-        {props.projects.map((p: any, i: number) => (
+      <div className={classes.tabContainer}>
+        <Tabs
+          scrollButtons="off"
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          className={classes.tabs}
+          classes={{
+            indicator: classes.indicator
+          }}
+        >
           <Tab
-            key={i + 1}
-            label={p.title}
-            {...a11yProps(i + 1)}
-            className={classes.projectTabs}
+            label="Projects"
+            {...a11yProps(0)}
+            className={classes.firstTab}
           />
-        ))}
-      </Tabs>
+          {props.projects.map((p: any, i: number) => (
+            <Tab
+              key={i + 1}
+              label={p.title}
+              {...a11yProps(i + 1)}
+              className={classes.projectTabs}
+            />
+          ))}
+        </Tabs>
+      </div>
       <TabPanel value={value} index={0}>
         <Grid container direction="row">
-          <Grid item>
+          <Grid item className={classes.gridHeader}>
             <Grid container direction="row">
               <Typography variant="h1" className={classes.projectHeader}>
                 Read some

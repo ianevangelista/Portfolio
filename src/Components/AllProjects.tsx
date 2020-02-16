@@ -8,40 +8,21 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const allProjects: { title: string; imgPath: string }[] = [
-  {
-    title: "Scrum Project 2020",
-    imgPath: `./Local_files/Harmoni/harmoni.png`
-  },
-  {
-    title: "Community News Website",
-    imgPath: `./Local_files/news.png`
-  },
-  {
-    title: "How Dumb R U?",
-    imgPath: `./Local_files/quiz.png`
-  },
-  {
-    title: "Three-Card Monte",
-    imgPath: `./Local_files/monte.jpg`
-  },
-  {
-    title: "IDI-Rally 2018",
-    imgPath: `./Local_files/icecream.jpg`
-  }
-];
+
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 450,
     flexGrow: 1,
     marginTop: 40,
 
-    "@media (max-width:1367px)": {
-      marginTop: 0
+    "@media (max-width:1024px)": {
+      marginTop: 0,
+      maxWidth: 380
     },
-    "@media (max-width:900px)": {
+    "@media (max-width:450px)": {
       marginTop: 20,
-      maxWidth: 240
+      maxWidth: 190,
+      margin: "0 auto"
     }
   },
   header: {
@@ -58,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 450,
     overflow: "hidden",
     objectFit: "cover",
-    "@media (max-width:900px)": {
+    "@media (max-width:450px)": {
       height: 130
     }
   },
@@ -74,7 +55,8 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     justifyContent: "center",
     "@media (max-width:900px)": {
-      maxWidth: 240
+      maxWidth: 240,
+      margin: "0 auto"
     }
   }
 }));
@@ -83,7 +65,7 @@ const AllProjects = (props: any) => {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = allProjects.length;
+  const maxSteps = props.projects.length;
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };

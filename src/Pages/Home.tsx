@@ -68,47 +68,41 @@ const useStyles = makeStyles((theme: Theme) =>
 const projects: {
   title: string;
   imgPath: string;
-  allImages: string[];
   info: string;
+  tags: string[];
 }[] = [
   {
     title: "Scrum Project 2020",
     imgPath: `./Local_files/Harmoni/harmoni.png`,
-    allImages: [
-      `./Local_files/Harmoni/harmoni.png`,
-      `./Local_files/Harmoni/profile.png`,
-      `./Local_files/Harmoni/events.png`,
-      `./Local_files/Harmoni/calendar.png`,
-      `./Local_files/Harmoni/event.png`
-    ],
     info:
-      "Team project in Software Engineering 2 with web applications. The team consisted of 10 students and we worked with a Scrum-master and a product owner. The main task was to develope a system for event planning."
+      "Team project in Software Engineering 2 with web applications. The team consisted of 10 students and we worked with a Scrum-master and a product owner. The main task was to develope a system for event planning.",
+    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
   },
   {
     title: "Community News Website",
     imgPath: `./Local_files/News/news.png`,
-    allImages: [`./Local_files/News/news.png`],
     info:
-      "An individual project in Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website."
+      "An individual project in Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website.",
+    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
   },
   {
     title: "How Dumb R U?",
     imgPath: `./Local_files/HDRU/quiz.png`,
-    allImages: [`./Local_files/HDRU/quiz.png`],
     info:
-      "A team project in Software Engineering 1 with Database Project. The team consisted of 7 students and we worked with two product-owners. The main task was to develope a game which could be used simultaneously by multiple users. We created a quiz-game called How Dumb R U?"
+      "A team project in Software Engineering 1 with Database Project. The team consisted of 7 students and we worked with two product-owners. The main task was to develope a game which could be used simultaneously by multiple users. We created a quiz-game called How Dumb R U?",
+    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
   },
   {
     title: "Three-Card Monte",
     imgPath: `./Local_files/Monte/monte.jpg`,
-    allImages: [`./Local_files/Monte/monte.jpg`],
-    info: "Info is coming"
+    info: "Info is coming",
+    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
   },
   {
-    title: "IDI-Rally 2018",
+    title: "Portfolio",
     imgPath: `./Local_files/IceCream/icecream.jpg`,
-    allImages: [`./Local_files/IceCream/icecream.jpg`],
-    info: "Info is coming"
+    info: "Info is coming",
+    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
   }
 ];
 
@@ -132,7 +126,7 @@ const Home = () => {
     return <Loading />;
   }
   return (
-    <Fade in={true} timeout={1500}>
+    <Fade in={true} timeout={2500}>
       <div>
         <Navigationbar />
         <Paper square className={classes.root}>
@@ -141,7 +135,7 @@ const Home = () => {
               <Avatar
                 variant="circle"
                 alt="Ian Evangelista"
-                src={"./Local_files/Etc/ian.png"}
+                src={"./Local_files/Etc/ian.jpg"}
                 className={classes.image}
               />
               <Grid>
