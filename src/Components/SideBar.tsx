@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 380,
+    height: 400,
     backgroundImage: `url(./Local_files/Background/background2.jpg)`,
     backgroundPosition: "center",
     backgroundSize: "cover",
@@ -66,6 +66,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
   },
   tabs: {
+    height: 380,
     borderRight: `1px solid ${theme.palette.divider}`,
     color: "white"
   },

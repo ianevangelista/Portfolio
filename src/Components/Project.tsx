@@ -6,23 +6,25 @@ import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
+import ReactPlayer from "react-player";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 450,
+    maxWidth: 500,
     flexGrow: 1,
     marginTop: 40,
 
-    "@media (max-width:1024px)": {
-      marginTop: 0,
-      maxWidth: 380
-    },
-    "@media (max-width:450px)": {
+    "@media (max-width:1366px)": {
       marginTop: 20,
-      maxWidth: 190,
-      margin: "0 auto"
+      maxWidth: 350
+    },
+    "@media (max-width:900px)": {
+      marginTop: 20,
+      maxWidth: 240,
+      marginLeft: "auto",
+      marginRight: "auto"
     }
   },
   header: {
@@ -36,10 +38,13 @@ const useStyles = makeStyles(theme => ({
   img: {
     height: 270,
     display: "block",
-    maxWidth: 450,
+    maxWidth: 500,
     overflow: "hidden",
     objectFit: "cover",
-    "@media (max-width:450px)": {
+    "@media (max-width:1366px)": {
+      height: 130
+    },
+    "@media (max-width:900px)": {
       height: 130
     }
   },
@@ -48,24 +53,28 @@ const useStyles = makeStyles(theme => ({
     color: "white"
   },
   btn: {
-    color: "white"
+    color: "black"
   },
   imgContainer: {
-    maxWidth: 450,
+    maxWidth: 500,
     display: "flex",
     justifyContent: "center",
-    "@media (max-width:450px)": {
-      maxWidth: 240,
-      margin: "0 auto"
+    "@media (max-width:1366px)": {
+      maxWidth: 350
+    },
+    "@media (max-width:900px)": {
+      maxWidth: 200,
+      marginLeft: "auto",
+      marginRight: "auto"
     }
   }
 }));
 
-const AllProjects = (props: any) => {
+const Project = (props: any) => {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = props.projects.length;
+  const maxSteps = props.project.allImages.length;
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
@@ -86,15 +95,23 @@ const AllProjects = (props: any) => {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {props.projects.map((step: any, index: number) => (
-          <div key={step.title}>
+        {props.project.allImages.map((step: any, index: number) => (
+          <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
               <div className={classes.imgContainer}>
-                <img
-                  className={classes.img}
-                  src={step.imgPath}
-                  alt={step.title}
-                />
+                {step.split(".").pop(-1) !== "mp4" ? (
+                  <img
+                    className={classes.img}
+                    src={step}
+                    alt={props.project.title}
+                  />
+                ) : (
+                  <ReactPlayer
+                    url={step}
+                    playing={false}
+                    controls={true}
+                  ></ReactPlayer>
+                )}
               </div>
             ) : null}
           </div>
@@ -141,4 +158,4 @@ const AllProjects = (props: any) => {
   );
 };
 
-export default AllProjects;
+export default Project;

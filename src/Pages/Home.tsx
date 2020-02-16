@@ -15,6 +15,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import SideBar from "../Components/SideBar";
 import Loading from "../Components/Loading/Loading";
+import EmailIcon from "@material-ui/icons/Email";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -67,42 +68,73 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const projects: {
   title: string;
+  gh: string;
+  demo: string;
   imgPath: string;
   info: string;
   tags: string[];
+  allImages: string[];
 }[] = [
   {
-    title: "Scrum Project 2020",
+    title: "Harmoni",
+    gh: "https://github.com/ianevangelista/Harmoni",
+    demo: "https://harmoni-ui.firebaseapp.com/#/",
     imgPath: `./Local_files/Harmoni/harmoni.png`,
     info:
-      "Team project in Software Engineering 2 with web applications. The team consisted of 10 students and we worked with a Scrum-master and a product owner. The main task was to develope a system for event planning.",
-    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
+      "Team scrum-project in Software Engineering 2 with web applications. The team consisted of 10 students and we worked with a Scrum-master and a product owner. The main task was to develope a system for event planning.",
+    tags: [
+      "TypeScript",
+      "Material-UI",
+      "ReactJS",
+      "NodeJS",
+      "Sequelize",
+      "JEST"
+    ],
+    allImages: [
+      `./Local_files/Harmoni/harmoni.png`,
+      `./Local_files/Harmoni/profile.png`,
+      `./Local_files/Harmoni/event.png`,
+      `./Local_files/Harmoni/events.png`,
+      `./Local_files/Harmoni/calendar.png`
+    ]
   },
   {
-    title: "Community News Website",
-    imgPath: `./Local_files/News/news.png`,
+    title: "Community News",
+    gh: "https://github.com/ianevangelista/Miniprosjekt",
+    demo: "",
+    imgPath: `./Local_files/News/news.jpg`,
     info:
       "An individual project in Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website.",
-    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
+    tags: ["JavaScript", "Bootstrap", "ReactJS", "NodeJS", "JEST"],
+    allImages: [`./Local_files/News/news.jpg`]
   },
   {
     title: "How Dumb R U?",
-    imgPath: `./Local_files/HDRU/quiz.png`,
+    gh: "https://github.com/ianevangelista/HowDumbRU",
+    demo: "",
+    imgPath: `./Local_files/HDRU/quiz.jpg`,
     info:
       "A team project in Software Engineering 1 with Database Project. The team consisted of 7 students and we worked with two product-owners. The main task was to develope a game which could be used simultaneously by multiple users. We created a quiz-game called How Dumb R U?",
-    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
+    tags: ["Java", "JavaFX", "MySQL"],
+    allImages: [`./Local_files/HDRU/quiz.jpg`]
   },
   {
     title: "Three-Card Monte",
+    gh: "https://github.com/ianevangelista/Three-Card-Monte",
+    demo: "",
     imgPath: `./Local_files/Monte/monte.jpg`,
     info: "Info is coming",
-    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
+    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"],
+    allImages: [`./Local_files/Monte/monte.jpg`, `./Local_files/Monte/demo.mp4`]
   },
   {
     title: "Portfolio",
+    gh: "https://github.com/ianevangelista/Portfolio",
+    demo: "",
     imgPath: `./Local_files/IceCream/icecream.jpg`,
     info: "Info is coming",
-    tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"]
+    tags: ["TypeScript", "Material-UI", "ReactJS"],
+    allImages: [`./Local_files/Etc/preview.jpg`]
   }
 ];
 
@@ -175,6 +207,15 @@ const Home = () => {
                 >
                   <IconButton>
                     <LinkedInIcon className={classes.icons} fontSize="large" />
+                  </IconButton>
+                </a>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=ianevangelista1999@gmail.com&su=Inquiry&body=To Ian Evangelista"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IconButton>
+                    <EmailIcon className={classes.icons} fontSize="large" />
                   </IconButton>
                 </a>
               </Grid>

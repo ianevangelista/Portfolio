@@ -7,16 +7,20 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "left",
       flexWrap: "wrap",
       marginTop: theme.spacing(2.5),
-      background: "transparent"
+      background: "transparent",
+      boxShadow: "none",
+      "@media (max-width:450px)": {
+        marginTop: theme.spacing(1)
+      }
     },
     chip: {
       marginRight: theme.spacing(1.5),
       fontSize: "1rem",
       "@media (max-width:450px)": {
-        fontSize: "0.5rem",
+        fontSize: "0.3rem",
         margin: theme.spacing(0.5)
       }
     }
