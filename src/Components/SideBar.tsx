@@ -51,8 +51,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
   },
   tabContainer: {
+    marginTop: 25,
     "@media (max-width: 450px)": {
-      minWidth: "150px"
+      minWidth: "150px",
+      marginTop: 10
     }
   },
   firstTab: {

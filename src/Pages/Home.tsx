@@ -104,7 +104,7 @@ const projects: {
     demo: "",
     imgPath: `./Local_files/News/news.jpg`,
     info:
-      "An individual project in Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website.",
+      "An individual project in the subject: Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website.",
     tags: ["JavaScript", "Bootstrap", "ReactJS", "NodeJS", "JEST"],
     allImages: [`./Local_files/News/news.jpg`]
   },
@@ -123,7 +123,8 @@ const projects: {
     gh: "https://github.com/ianevangelista/Three-Card-Monte",
     demo: "",
     imgPath: `./Local_files/Monte/monte.jpg`,
-    info: "Info is coming",
+    info:
+      "A team project in the subject: Introduction to programming, where we were given the opportunity to create any kind of robot. The idea was to create a robot which could play Three-card-monte. This project was made possible by using leJOS EV3.",
     tags: ["TypeScript", "Material UI", "React", "NodeJs", "Sequelize"],
     allImages: [`./Local_files/Monte/monte.jpg`, `./Local_files/Monte/demo.mp4`]
   },
@@ -131,8 +132,9 @@ const projects: {
     title: "Portfolio",
     gh: "https://github.com/ianevangelista/Portfolio",
     demo: "",
-    imgPath: `./Local_files/IceCream/icecream.jpg`,
-    info: "Info is coming",
+    imgPath: `./Local_files/Etc/preview.jpg`,
+    info:
+      "This portfolio was made to showcase some of my recent projects. It is made by using TypeScript, Material-UI and ReactJS",
     tags: ["TypeScript", "Material-UI", "ReactJS"],
     allImages: [`./Local_files/Etc/preview.jpg`]
   }
