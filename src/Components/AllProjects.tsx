@@ -19,6 +19,10 @@ const useStyles = makeStyles(theme => ({
       marginTop: 0,
       maxWidth: 380
     },
+    "@media (max-width:768px)": {
+      marginTop: 0,
+      maxWidth: 300
+    },
     "@media (max-width:450px)": {
       marginTop: 20,
       maxWidth: 190,

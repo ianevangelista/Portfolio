@@ -12,19 +12,22 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 500,
+    maxWidth: 900,
     flexGrow: 1,
     marginTop: 40,
+    margin: "0 auto",
 
     "@media (max-width:1366px)": {
       marginTop: 20,
-      maxWidth: 350
+      maxWidth: 800
     },
-    "@media (max-width:900px)": {
+    "@media (max-width:768px)": {
       marginTop: 20,
-      maxWidth: 240,
-      marginLeft: "auto",
-      marginRight: "auto"
+      maxWidth: 800
+    },
+    "@media (max-width:450px)": {
+      marginTop: 20,
+      maxWidth: 400
     }
   },
   header: {
@@ -36,16 +39,16 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   img: {
-    height: 270,
+    height: 470,
     display: "block",
-    maxWidth: 500,
+    maxWidth: 900,
     overflow: "hidden",
     objectFit: "cover",
     "@media (max-width:1366px)": {
-      height: 130
+      height: 470
     },
-    "@media (max-width:900px)": {
-      height: 130
+    "@media (max-width:450px)": {
+      height: 150
     }
   },
   stepper: {
@@ -56,14 +59,14 @@ const useStyles = makeStyles(theme => ({
     color: "black"
   },
   imgContainer: {
-    maxWidth: 500,
+    maxWidth: 900,
     display: "flex",
     justifyContent: "center",
     "@media (max-width:1366px)": {
-      maxWidth: 350
+      maxWidth: 900
     },
-    "@media (max-width:900px)": {
-      maxWidth: 200,
+    "@media (max-width:450px)": {
+      maxWidth: 400,
       marginLeft: "auto",
       marginRight: "auto"
     }

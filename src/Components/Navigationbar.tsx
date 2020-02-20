@@ -23,6 +23,7 @@ import {
   ListItem,
   ListItemText
 } from "@material-ui/core";
+import { HashLink as Link } from "react-router-hash-link";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       alignItems: "center",
       ...theme.mixins.toolbar,
-      justifyContent: "flex-start"
+      justifyContent: "flex-end"
     },
 
     drawPaper: {
@@ -57,15 +58,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     cvBtn: {
-      [theme.breakpoints.down("xs")]: {
-        display: "none"
-      },
-      transition: "transform 0.2s",
-      "&:hover": {
-        transform: "scale(1.1)"
-      }
-    },
-    aboutBtn: {
       [theme.breakpoints.down("xs")]: {
         display: "none"
       },
@@ -110,15 +102,10 @@ const NavigationBar = () => {
   };
 
   const handleDrawerCV = () => {
-    window.location.hash = "/";
     handleDrawerClose();
   };
 
-  const handleDrawerAbout = () => {
-    handleDrawerClose();
-  };
   const handleDrawerProjects = () => {
-    window.location.hash = "/";
     handleDrawerClose();
   };
 
@@ -150,11 +137,13 @@ const NavigationBar = () => {
                   <Typography>CURRICULUM VITAE</Typography>
                 </Button>
               </a>
-              <Button color="inherit" className={classes.aboutBtn}>
-                <Typography>ABOUT</Typography>
-              </Button>
               <Button color="inherit" className={classes.projectsBtn}>
-                <Typography>PROJECTS</Typography>
+                <Link
+                  to="#projects"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  <Typography>PROJECTS</Typography>
+                </Link>
               </Button>
             </Grid>
           </Box>
@@ -165,14 +154,14 @@ const NavigationBar = () => {
         classes={{ paper: classes.drawPaper }}
         onClose={handleDrawerClose}
         open={open}
-        anchor="right"
+        anchor="left"
       >
         <Box className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
-              <ChevronLeftIcon />
-            ) : (
               <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
             )}
           </IconButton>
         </Box>
@@ -191,11 +180,15 @@ const NavigationBar = () => {
               <ListItemText> CURRICULUM VITAE </ListItemText>
             </ListItem>
           </a>
-          <ListItem button onClick={handleDrawerAbout}>
-            <ListItemText> ABOUT </ListItemText>
-          </ListItem>
           <ListItem button onClick={handleDrawerProjects}>
-            <ListItemText> PROJECTS </ListItemText>
+            <ListItemText>
+              <Link
+                to="/#projects"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <Typography>PROJECTS</Typography>
+              </Link>
+            </ListItemText>
           </ListItem>
         </List>
       </Drawer>

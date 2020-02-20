@@ -32,6 +32,11 @@ const newStyles = makeStyles((theme: Theme) =>
         maxWidth: 450,
         width: "45vw"
       },
+      "@media (max-width:768px)": {
+        marginTop: 20,
+        maxWidth: 450,
+        width: "45vw"
+      },
       "@media (max-width:450px)": {
         marginTop: 20,
         maxWidth: 450,
@@ -40,7 +45,12 @@ const newStyles = makeStyles((theme: Theme) =>
     },
     text: {
       "@media (max-width:1024px)": {
-        maxWidth: 450
+        maxWidth: 450,
+        fontSize: "1.2rem"
+      },
+      "@media (max-width:768px)": {
+        fontSize: "1rem",
+        width: "52vw"
       },
       "@media (max-width:450px)": {
         fontSize: "0.6rem",
@@ -51,17 +61,18 @@ const newStyles = makeStyles((theme: Theme) =>
       fontSize: "2.2rem",
       color: "white",
       "@media (max-width:450px)": {
-        fontSize: "0.7rem"
+        fontSize: "1rem",
+        marginRight: "-10px"
       }
     },
     iconsGrid: {
       marginLeft: 30,
       display: "flex",
       flexDirection: "row",
-
+      marginTop: "-2px",
       "@media (max-width:450px)": {
         marginLeft: 0,
-        marginTop: "-8px"
+        marginTop: "-12px"
       }
     }
   })

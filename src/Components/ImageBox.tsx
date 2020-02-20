@@ -46,13 +46,15 @@ export default function ImageBox(props: any) {
         color="inherit"
         onClick={handleClickOpen}
       >
-        View images
+        View media
       </Button>
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
+        fullWidth={true}
+        maxWidth="md"
       >
         <DialogTitle id="alert-dialog-title">{props.project.title}</DialogTitle>
         <DialogContent>

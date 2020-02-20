@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme: Theme) =>
     chip: {
       marginRight: theme.spacing(1.5),
       fontSize: "1rem",
+      "@media (max-width:768px)": {
+        fontSize: "0.7rem",
+        margin: theme.spacing(0.5)
+      },
       "@media (max-width:450px)": {
         fontSize: "0.3rem",
         margin: theme.spacing(0.5)

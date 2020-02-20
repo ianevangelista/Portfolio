@@ -9,13 +9,20 @@ import {
   Grid,
   Typography,
   IconButton,
-  Fade
+  Fade,
+  Button
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import SideBar from "../Components/SideBar";
+import Projects from "./Projects";
 import Loading from "../Components/Loading/Loading";
 import EmailIcon from "@material-ui/icons/Email";
+import PhoneIcon from "@material-ui/icons/Phone";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -105,8 +112,15 @@ const projects: {
     imgPath: `./Local_files/News/news.jpg`,
     info:
       "An individual project in the subject: Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website.",
-    tags: ["JavaScript", "Bootstrap", "ReactJS", "NodeJS", "JEST"],
-    allImages: [`./Local_files/News/news.jpg`]
+    tags: ["JavaScript", "Bootstrap", "ReactJS", "NodeJS", "JEST", "Flow"],
+    allImages: [
+      `./Local_files/News/news.jpg`,
+      `./Local_files/News/article.jpg`,
+      `./Local_files/News/article2.jpg`,
+      `./Local_files/News/comments.jpg`,
+      `./Local_files/News/category.jpg`,
+      `./Local_files/News/register.jpg`
+    ]
   },
   {
     title: "How Dumb R U?",
@@ -115,8 +129,14 @@ const projects: {
     imgPath: `./Local_files/HDRU/quiz.jpg`,
     info:
       "A team project in Software Engineering 1 with Database Project. The team consisted of 7 students and we worked with two product-owners. The main task was to develope a game which could be used simultaneously by multiple users. We created a quiz-game called How Dumb R U?",
-    tags: ["Java", "JavaFX", "MySQL"],
-    allImages: [`./Local_files/HDRU/quiz.jpg`]
+    tags: ["Java", "JavaFX", "MySQL", "HikariCP"],
+    allImages: [
+      `./Local_files/HDRU/quiz.jpg`,
+      `./Local_files/HDRU/register.jpg`,
+      `./Local_files/HDRU/info.jpg`,
+      `./Local_files/HDRU/feedback.jpg`,
+      `./Local_files/HDRU/reset.jpg`
+    ]
   },
   {
     title: "Three-Card Monte",
@@ -143,14 +163,22 @@ const projects: {
 const Home = () => {
   const classes = useStyles();
   const [isLoading, setLoading] = useState(true);
+  const [open, setOpen] = React.useState(false);
 
-  function checkLoading() {
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const checkLoading = () => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve();
       }, 1500);
     });
-  }
+  };
 
   useEffect(() => {
     checkLoading().then(() => setLoading(false));
@@ -220,11 +248,40 @@ const Home = () => {
                     <EmailIcon className={classes.icons} fontSize="large" />
                   </IconButton>
                 </a>
+                <IconButton>
+                  <PhoneIcon
+                    className={classes.icons}
+                    fontSize="large"
+                    onClick={handleOpen}
+                  />
+                </IconButton>
+                {open && (
+                  <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    fullWidth={true}
+                    maxWidth="sm"
+                  >
+                    <DialogTitle id="alert-dialog-title">Call me</DialogTitle>
+                    <DialogContent>
+                      <DialogContentText id="alert-dialog-description">
+                        <Typography>My phonenumber: +47 45049804</Typography>
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button onClick={handleClose} autoFocus>
+                        Close
+                      </Button>
+                    </DialogActions>
+                  </Dialog>
+                )}
               </Grid>
             </Grid>
           </Grid>
         </Paper>
-        <SideBar projects={projects} />
+        <Projects projects={projects} />
       </div>
     </Fade>
   );
