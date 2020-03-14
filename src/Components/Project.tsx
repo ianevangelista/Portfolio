@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 900,
     flexGrow: 1,
-    marginTop: 40,
     margin: "0 auto",
 
     "@media (max-width:1366px)": {

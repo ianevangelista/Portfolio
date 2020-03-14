@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
       "@media (max-width:450px)": {
         fontSize: "0.1rem"
       }
-    }
+    },
+    dialogContent: { overflowY: "hidden", padding: "0" }
   })
 );
 export default function ImageBox(props: any) {
@@ -57,7 +58,7 @@ export default function ImageBox(props: any) {
         maxWidth="md"
       >
         <DialogTitle id="alert-dialog-title">{props.project.title}</DialogTitle>
-        <DialogContent>
+        <DialogContent className={classes.dialogContent}>
           <DialogContentText id="alert-dialog-description">
             <Project project={props.project} />
           </DialogContentText>
