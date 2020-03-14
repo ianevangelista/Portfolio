@@ -14,7 +14,9 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 450,
     flexGrow: 1,
     marginTop: 40,
-
+    "@media (max-width:1668px)": {
+      marginTop: 0
+    },
     "@media (max-width:1024px)": {
       marginTop: 0,
       maxWidth: 380

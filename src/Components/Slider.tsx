@@ -44,6 +44,10 @@ const newStyles = makeStyles((theme: Theme) =>
       }
     },
     text: {
+      "@media (max-width:1668px)": {
+        maxWidth: 450,
+        fontSize: "1.2rem"
+      },
       "@media (max-width:1024px)": {
         maxWidth: 450,
         fontSize: "1.2rem"

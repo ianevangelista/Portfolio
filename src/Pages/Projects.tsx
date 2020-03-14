@@ -87,6 +87,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   projectHeader: {
     color: "white",
     marginRight: "30px",
+    "@media (max-width:1668px)": {
+      fontSize: "2.5rem",
+      marginRight: "20px"
+    },
     "@media (max-width:1024px)": {
       fontSize: "2.5rem",
       marginRight: "20px"

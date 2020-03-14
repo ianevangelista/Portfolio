@@ -163,8 +163,7 @@ const projects: {
 const Home = () => {
   const classes = useStyles();
   const [isLoading, setLoading] = useState(true);
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
@@ -175,6 +174,7 @@ const Home = () => {
   const checkLoading = () => {
     return new Promise(resolve => {
       setTimeout(() => {
+        sessionStorage.setItem("session", "true");
         resolve();
       }, 1500);
     });
@@ -184,7 +184,7 @@ const Home = () => {
     checkLoading().then(() => setLoading(false));
   }, [isLoading]);
 
-  if (isLoading) {
+  if (isLoading && sessionStorage.getItem("session") !== "true") {
     return <Loading />;
   }
   return (
@@ -239,8 +239,9 @@ const Home = () => {
                     <LinkedInIcon className={classes.icons} fontSize="large" />
                   </IconButton>
                 </a>
+
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=ianevangelista1999@gmail.com&su=Inquiry&body=To Ian Evangelista"
+                  href="mailto:ianevangelista1999@gmail.com?subject=Inquiry!&body=Hi, Ian!"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
