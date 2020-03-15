@@ -88,7 +88,7 @@ const projects: {
     demo: "https://harmoni-ui.firebaseapp.com/#/",
     imgPath: `./Local_files/Harmoni/harmoni.png`,
     info:
-      "Team scrum-project in Software Engineering 2 with web applications. The team consisted of 10 students and we worked with a Scrum-master and a product owner. The main task was to develope a system for event planning.",
+      "Team scrum-project in Software Engineering 2 with web applications. The team consisted of 10 students and we worked with a Scrum-master and a product owner. The main task was to develope a system for event planning. A demo is available by the use of Firebase and Heroku. Click the eye-icon above to see the demo",
     tags: [
       "TypeScript",
       "Material-UI",
@@ -108,10 +108,10 @@ const projects: {
   {
     title: "Community News",
     gh: "https://github.com/ianevangelista/Miniprosjekt",
-    demo: "",
+    demo: "https://community-news-client.herokuapp.com/#/",
     imgPath: `./Local_files/News/news.jpg`,
     info:
-      "An individual project in the subject: Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website.",
+      "An individual project in the subject: Software Engineering 2 with web applications. The main task was to develope a system for reading and publishing news article for a community news-website. A demo is available by the use of Heroku. Click the eye-icon above to see the demo",
     tags: ["JavaScript", "Bootstrap", "ReactJS", "NodeJS", "JEST", "Flow"],
     allImages: [
       `./Local_files/News/news.jpg`,

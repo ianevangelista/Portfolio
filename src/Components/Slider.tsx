@@ -21,7 +21,7 @@ const newStyles = makeStyles((theme: Theme) =>
     },
     title: {
       "@media (max-width:450px)": {
-        fontSize: "1rem"
+        fontSize: "0.9rem"
       }
     },
     info: {
@@ -44,12 +44,14 @@ const newStyles = makeStyles((theme: Theme) =>
       }
     },
     text: {
+      width: "50vw",
+
       "@media (max-width:1668px)": {
-        maxWidth: 450,
+        maxWidth: "50vw",
         fontSize: "1.2rem"
       },
       "@media (max-width:1024px)": {
-        maxWidth: 450,
+        maxWidth: "50vw",
         fontSize: "1.2rem"
       },
       "@media (max-width:768px)": {

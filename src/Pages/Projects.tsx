@@ -45,13 +45,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: 400,
     backgroundImage: `url(./Local_files/Background/background2.jpg)`,
     backgroundPosition: "center",
-    backgroundSize: "cover",
-    "@media (max-width: 768px)": {
+    backgroundSize: "cover"
+    /*"@media (max-width: 768px)": {
       height: 370
     },
     "@media (max-width: 450px)": {
       height: 330
-    }
+    }*/
   },
   tabContainer: {
     marginTop: 25,

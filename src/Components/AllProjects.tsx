@@ -4,14 +4,9 @@ import MobileStepper from "@material-ui/core/MobileStepper";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import SwipeableViews, { SpringConfig } from "react-swipeable-views";
+import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
-const springConfig: SpringConfig = {
-  duration: "7.5s",
-  easeFunction: "cubic-bezier(0.1, 0.35, 0.2, 1.2)",
-  delay: "0s"
-};
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const useStyles = makeStyles(theme => ({
@@ -96,7 +91,6 @@ const AllProjects = (props: any) => {
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
-        springConfig={springConfig}
       >
         {props.projects.map((step: any, index: number) => (
           <div key={step.title}>
