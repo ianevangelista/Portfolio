@@ -168,7 +168,7 @@ const NavigationBar = () => {
         <Divider />
         <List>
           <a
-            href="./Local_files/cv.pdf"
+            href="./Local_files/Etc/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             style={{

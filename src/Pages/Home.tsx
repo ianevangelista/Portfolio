@@ -268,7 +268,10 @@ const Home = () => {
                     <DialogTitle id="alert-dialog-title">Call me</DialogTitle>
                     <DialogContent>
                       <DialogContentText id="alert-dialog-description">
-                        <Typography>My phonenumber: +47 45049804</Typography>
+                        <Typography>
+                          My phonenumber:
+                          <a href="tel:004745049804"> +47 45049804</a>
+                        </Typography>
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>

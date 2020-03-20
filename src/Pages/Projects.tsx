@@ -42,16 +42,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: "flex",
-    height: 400,
+    height: 410,
     backgroundImage: `url(./Local_files/Background/background2.jpg)`,
     backgroundPosition: "center",
     backgroundSize: "cover"
-    /*"@media (max-width: 768px)": {
-      height: 370
-    },
-    "@media (max-width: 450px)": {
-      height: 330
-    }*/
   },
   tabContainer: {
     marginTop: 25,
@@ -88,11 +82,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: "white",
     marginRight: "30px",
     "@media (max-width:1668px)": {
-      fontSize: "2.5rem",
+      fontSize: "4.5rem",
       marginRight: "20px"
     },
     "@media (max-width:1024px)": {
-      fontSize: "2.5rem",
+      fontSize: "3.5rem",
       marginRight: "20px"
     },
     "@media (max-width: 768px)": {
