@@ -33,7 +33,7 @@ function TabPanel(props: TabPanelProps) {
 function a11yProps(index: any) {
   return {
     id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
@@ -45,72 +45,72 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: 410,
     backgroundImage: `url(./Local_files/Background/background2.jpg)`,
     backgroundPosition: "center",
-    backgroundSize: "cover"
+    backgroundSize: "cover",
   },
   tabContainer: {
     marginTop: 25,
     "@media (max-width: 450px)": {
       minWidth: "150px",
-      marginTop: 10
-    }
+      marginTop: 10,
+    },
   },
   firstTab: {
     fontSize: "1.75rem",
     transition: "transform 0.2s",
     "&:hover": {
-      transform: "scale(1.1)"
+      transform: "scale(1.1)",
     },
     "@media (max-width:450px)": {
-      fontSize: "0.85rem"
-    }
+      fontSize: "0.85rem",
+    },
   },
   tabs: {
     height: 380,
     borderRight: `1px solid ${theme.palette.divider}`,
-    color: "white"
+    color: "white",
   },
   projectTabs: {
     transition: "transform 0.2s",
     "&:hover": {
-      transform: "scale(1.1)"
+      transform: "scale(1.1)",
     },
     "@media (max-width:450px)": {
-      fontSize: "0.7rem"
-    }
+      fontSize: "0.7rem",
+    },
   },
   projectHeader: {
     color: "white",
     marginRight: "30px",
     "@media (max-width:1668px)": {
       fontSize: "4.5rem",
-      marginRight: "20px"
+      marginRight: "20px",
     },
-    "@media (max-width:1024px)": {
+    "@media (max-width:1366px)": {
       fontSize: "3.5rem",
-      marginRight: "20px"
+      marginRight: "20px",
     },
-    "@media (max-width: 768px)": {
-      fontSize: "2rem"
+    "@media (max-width: 834px)": {
+      fontSize: "2rem",
     },
     "@media (max-width:450px)": {
       fontSize: "1.7rem",
       marginBottom: 5,
       marginLeft: "auto",
-      marginRight: "auto"
-    }
+      marginRight: "auto",
+    },
   },
   indicator: {
-    backgroundColor: "white"
+    backgroundColor: "white",
   },
   selectedTabs: {
-    color: "white"
+    color: "white",
   },
   gridHeader: {
     "@media (max-width:450px)": {
       marginLeft: "auto",
-      marginRight: "auto"
-    }
-  }
+      marginRight: "auto",
+    },
+  },
 }));
 
 const Projects = (props: any) => {
@@ -132,7 +132,7 @@ const Projects = (props: any) => {
           onChange={handleChange}
           className={classes.tabs}
           classes={{
-            indicator: classes.indicator
+            indicator: classes.indicator,
           }}
         >
           <Tab

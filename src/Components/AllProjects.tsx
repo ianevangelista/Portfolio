@@ -9,27 +9,27 @@ import { autoPlay } from "react-swipeable-views-utils";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 650,
     flexGrow: 1,
     marginTop: 40,
     "@media (max-width:1668px)": {
-      marginTop: 0
-    },
-    "@media (max-width:1024px)": {
       marginTop: 0,
-      maxWidth: 380
     },
-    "@media (max-width:768px)": {
+    "@media (max-width:1112px)": {
       marginTop: 0,
-      maxWidth: 300
+      maxWidth: 380,
+    },
+    "@media (max-width:834px)": {
+      marginTop: 0,
+      maxWidth: 300,
     },
     "@media (max-width:450px)": {
       marginTop: 20,
       maxWidth: 190,
-      margin: "0 auto"
-    }
+      margin: "0 auto",
+    },
   },
   header: {
     display: "flex",
@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     height: 50,
     backgroundColor: "transparent",
     color: "white",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   img: {
     height: 270,
@@ -46,15 +46,15 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     objectFit: "cover",
     "@media (max-width:450px)": {
-      height: 130
-    }
+      height: 130,
+    },
   },
   stepper: {
     backgroundColor: "transparent",
-    color: "white"
+    color: "white",
   },
   btn: {
-    color: "white"
+    color: "white",
   },
   imgContainer: {
     maxWidth: 650,
@@ -62,9 +62,9 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     "@media (max-width:450px)": {
       maxWidth: 240,
-      margin: "0 auto"
-    }
-  }
+      margin: "0 auto",
+    },
+  },
 }));
 
 const AllProjects = (props: any) => {
@@ -73,11 +73,11 @@ const AllProjects = (props: any) => {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = props.projects.length;
   const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
   const handleStepChange = (step: number) => {

@@ -221,6 +221,11 @@ const Home = () => {
                 </Typography>
               </Grid>
               <Grid container direction="row">
+                <Typography className={classes.info} variant="h4">
+                  Full Stack Developer
+                </Typography>
+              </Grid>  
+              <Grid container direction="row">
                 <a
                   href="https://github.com/ianevangelista"
                   target="_blank"
